@@ -26,6 +26,14 @@ app.post('/api/notes', (req, res) => {
 
     const currentNote = JSON.parse(data);
 
+    let highestId = 0;
+    currentNote.forEach(note => {
+        if (note.id > highestId){
+            highestId = note.id;
+        }
+    });
+    newNote.id = highestId + 1;
+    
     currentNote.push(newNote);
 
     fs.writeFile(path.join(__dirname, '/db/db.json'), JSON.stringify(currentNote), (err) => {
@@ -43,14 +51,5 @@ app.get('/api/notes', (req, res) => {
         res.json(JSON.parse(data));
     });
 });
-
-
-
-
-
-
-
-
-
 
 app.listen(PORT, () => console.log('Server listening on port ' + PORT));
