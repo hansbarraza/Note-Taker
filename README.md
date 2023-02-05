@@ -3,9 +3,11 @@
 ## Description
 This is a simple Express.js based application for taking and storing notes. The application serves an HTML page at where the user can view, add and delete notes. The notes are stored in a JSON file in the /db directory.
 
+![Demo of Note Taker](/public/assets/video-demo/note-taker.gif)
+
 ## Features
 * View notes: The application serves an HTML page that displays all the existing notes.
-* Add notes: The user can add a new note by clicking on the "Add a Note" button and filling in the form.
+* Add notes: The user can add a new note by filling in the form and clicking on the save icon.
 * Delete notes: The user can delete a note by clicking on the trash icon.
 
 ## Technical Details
