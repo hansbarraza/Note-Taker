@@ -52,4 +52,21 @@ app.get('/api/notes', (req, res) => {
     });
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+    fs.readFile(path.join(__dirname, '/db/db.json'), 'utf-8', (err,data) => {
+        if (err) throw err;
+
+        let currentNote = JSON.parse(data);
+        let noteId = req.params.id;
+
+        currentNote = currentNote.filter(note => note.id != noteId);
+
+    fs.writeFile(path.join(__dirname, '/db/db.json'), JSON.stringify(currentNote), (err) => {
+        if (err) throw err;
+
+        res.json({ success: true});
+    });
+    });
+});
+
 app.listen(PORT, () => console.log('Server listening on port ' + PORT));
