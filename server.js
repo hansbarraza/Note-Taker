@@ -44,7 +44,7 @@ app.get('/api/notes', (req, res) => {
     res.json(JSON.parse(data));
     });
 });
-// Delete request endpoint to delete a note form database 
+// Delete request endpoint to delete a note from database 
 app.delete('/api/notes/:id', (req, res) => {
     fs.readFile(path.join(__dirname, '/db/db.json'), 'utf-8', (err,data) => {
         if (err) throw err;
