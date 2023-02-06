@@ -17,3 +17,6 @@ This is a simple Express.js based application for taking and storing notes. The 
 * The application uses the express.json() and express.urlencoded({ extended: true}) middleware to parse JSON and URL-encoded data from the client.
 * The express.static('public') middleware is used to serve the static assets located in the /public directory.
 * The application listens on port 3001 by default, but this can be overridden by setting the PORT environment variable.
+
+ ## Questions
+  If you have any questions about this project contact me directly at barraza24@gmail.com. You can also view more of my work at https://github.com/hansbarraza.
